@@ -15,7 +15,10 @@ client.on('message', message => {
   	}
     if (message.content.startsWith('/twitter')){
         message.channel.send('Twitter:  https://twitter.com/ServidoresGhost');
-    } 
+    }
+    if (message.content.startsWith('/ip')){
+        message.channel.send('Nosso ip é: ghostminigames.com ou ghostsurvival.com');
+    }
     if (message.content.startsWith('/comandos')){
         message.channel.send('Meus comandos são: /twitter - /loja - /ping - /ip')
     }
