@@ -22,9 +22,6 @@ client.on('message', message => {
     if (message.content.startsWith('/loja')){
         message.channel.send('Em desenvolvimento!');
     }
-    f (message.content.startsWith('/ip')){
-       message.channel.send('ghostminigames.com - ghostminigames.com')
-    }
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
   if(cmd === '/ping') {
