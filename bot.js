@@ -17,13 +17,13 @@ client.on('message', message => {
         message.channel.send('Twitter:  https://twitter.com/ServidoresGhost');
     } 
     if (message.content.startsWith('/comandos')){
-        message.channel.send('Meus comandos são: /twitter - /loja - /ping')
+        message.channel.send('Meus comandos são: /twitter - /loja - /ping - /ip')
     }
     if (message.content.startsWith('/loja')){
         message.channel.send('Em desenvolvimento!');
     }
     f (message.content.startsWith('/ip')){
-        message.channel.send('ghostminigames. **╚╝** comghostsurvival.com.');
+        message.channel.send('ghostminigames.com - ghostminigames.com');
     }
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
