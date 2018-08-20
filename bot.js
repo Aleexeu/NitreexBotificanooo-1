@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 
 client.on('ready', () => {
-    client.user.setPresence({ game: { name: `meus comandos /comandos`, type: 1, url: 'https://www.twitch.tv/recky'} });
+    client.user.setPresence({ game: { name: `meus comandos g!comandos`, type: 1, url: 'https://www.twitch.tv/recky'} });
     console.log('Logado');
 });
 client.on('message', message => {
@@ -14,19 +14,13 @@ client.on('message', message => {
         message.reply('pong');
   	}
     if (message.content.startsWith('/twitter')){
-        message.channel.send('Twitter:  https://twitter.com/Reckzinnn1');
+        message.channel.send('Twitter:  https://twitter.com/ServidoresGhost');
     } 
     if (message.content.startsWith('/comandos')){
-        message.channel.send('Meus comandos são: /twitter - /canal - /donos - /inscrito - /ping')
+        message.channel.send('Meus comandos são: /twitter - /loja - /ping')
     }
-    if (message.content.startsWith('/donos')){
-        message.channel.send('É o Recky e o !👑Slopy👑!');
-    }
-    if (message.content.startsWith('/inscrito')){
-        message.channel.send('Inscritos são àqueles quê vão nos vídeos é deixa seu like, também são aqueles que ativa o sininho pra chegar as notificações, obrigado por está nos acompanhando até hoje, um salve pra você e tchau!!');
-    }
-    if (message.content.startsWith('/canal')){
-        message.channel.send('Recky : https://www.youtube.com/channel/UCKKAEwJ6ArmYaV214-qZ5_g/featured ------ Slopy : https://www.youtube.com/channel/UCtq7npnD1v-R2bqJFQJkjbA');
+    if (message.content.startsWith('/loja')){
+        message.channel.send('Em desenvolvimento!');
     }
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
@@ -52,7 +46,7 @@ let cmd = arraymsg[0].toLowerCase()
 client.on('guildMemberAdd', member => {
   const randomColor = "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); });
  
-  let canal = member.guild.channels.find(`name`, "📥recepção");
+  let canal = member.guild.channels.find(`name`, "📥entrada");
   if (!canal) return;
 
   var embed = new Discord.RichEmbed()
