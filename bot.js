@@ -23,7 +23,7 @@ client.on('message', message => {
         message.channel.send('Em desenvolvimento!');
     }
     f (message.content.startsWith('/ip')){
-        message.channel.send('ghostminigames.com - ghostminigames.com');
+       message.channel.send('ghostminigames.com - ghostminigames.com')
     }
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
