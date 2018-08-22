@@ -11,14 +11,12 @@ let cmd = arraymsg[0].toLowerCase()
 let args = message.content.split(" ").slice(1);
 if(cmd === '/anuncio'){
     const args = message.content.split(" ").slice(1);
-    const prefix = '.'
+    const prefix = '/'
     if (!args.slice(0).join(' ')) return message.channel.send('test')
     message.channel.send({embed:{
-        'title':'Votaçao',
         'description':args.slice(0).join(' ')
         ,'color':message.member.highestRole.color,
         "thumbnail":{
-            url: message.author.avatarURL
             }
         }
     }
