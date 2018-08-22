@@ -3,6 +3,7 @@ const bot = new Discord.Client();
 
 
 bot.on('ready', () => {
+    bot.user.setActivity('sua mensagem', 'https://www.twitch.tv/recky', {type: "STREAMING"});
     console.log('Logado');
 });
 bot.on('message', message => {
