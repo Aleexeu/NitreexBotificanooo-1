@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 
 
 bot.on('ready', () => {
-    bot.user.setActivity('sua mensagem', 'https://www.twitch.tv/recky', {type: "STREAMING"});
+    bot.user.setPresence({ game: { name: `/comandos`, type: 1, url: 'https://www.youtube.com/yRecky'} });
     console.log('Logado');
 });
 bot.on('message', message => {
