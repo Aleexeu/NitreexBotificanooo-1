@@ -63,9 +63,6 @@ bot.on('message', message => {
     if (message.content.startsWith('/loja')){
         message.channel.send('Em desenvolvimento!');
     }
-    if (message.content.startsWith('/anuncio')){
-        message.channel.send('@here @everyone');
-    }
 });
 bot.on('guildMemberAdd', member => {
   const randomColor = "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); });
