@@ -10,18 +10,23 @@ bot.on('message', message => {
 let cmd = arraymsg[0].toLowerCase()
 let args = message.content.split(" ").slice(1);
     if(cmd === '/anuncio'){
-
-    if(!message.member.hasPermission("MANAGE_ROLES")) return;
-       const sayMessage = args.join(" ");
+  // comando anuncio
+    if(!message.member.hasPermissions("ADMINISTRATOR")) return message.channel.send(`❌|**${message.author.username}** você não tem permissão suficiente para usar esse comando `)
+    const sayMessage = args.join(" ");
     message.delete()
     
-       const embed = new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
     
-       .setTitle('📢 **Anuncio** 📢')
-       .setDescription(sayMessage)
+    .setTitle('📢 **Anuncio** 📢')
+    .setDescription(sayMessage)
+    .setFooter(`Enviado por: ${message.author.username}`)
+    .setTimestamp(new Date())
+    .setColor('RANDOM')
+    .setThumbnail(message.guild.iconURL);
     
     
-       message.channel.send(embed);
+    message.channel.send(embed);
+    
     }
 });
 bot.on('message', message => {
