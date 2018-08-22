@@ -7,6 +7,8 @@ bot.on('ready', () => {
     console.log('Logado');
 });
 bot.on('message', message => {
+    if (message.content.startsWith('/anuncio')){
+        message.channel.send('@here @everyone');
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
 let args = message.content.split(" ").slice(1);
@@ -22,6 +24,7 @@ if(cmd === '/anuncio'){
             }
         }
     }
+                         }
     )
 }
 });
