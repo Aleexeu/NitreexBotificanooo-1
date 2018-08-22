@@ -12,9 +12,9 @@ let args = message.content.split(" ").slice(1);
 if(cmd === '/anuncio'){
     const args = message.content.split(" ").slice(1);
     const prefix = '/'
+    message.delete()
     if (!args.slice(0).join(' ')) return message.channel.send('test')
     message.channel.send({embed:{
-        message.delete()
         'description':args.slice(0).join(' ')
         ,'color':message.member.highestRole.color,
         "thumbnail":{
