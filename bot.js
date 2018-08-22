@@ -10,20 +10,6 @@ client.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
 let args = message.content.split(" ").slice(1)
-    if(cmd === '/say'){
-
-    if(!message.member.hasPermission("MANAGE_ROLES")) return;
-    const sayMessage = args.join(" ");
-    message.delete()
-    
-    const embed = new Discord.RichEmbed()
-    
-
-    .setDescription(sayMessage)
- 
-    
-    message.channel.send(embed);
-    }
     if(cmd === '/ban'){
         const args = message.content.split(" ").slice(1);
         var razao = args.slice(1).join(" ")
