@@ -12,7 +12,6 @@ let args = message.content.split(" ").slice(1);
     if(cmd === '/anuncio'){
     if(!message.member.hasPermission("MANAGE_ROLES")) return;
        const sayMessage = args.join(" ");
-    message.delete()
        const embed = new Discord.RichEmbed()
        .setDescription(sayMessage)
        message.channel.send(embed);
