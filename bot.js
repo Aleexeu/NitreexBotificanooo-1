@@ -59,11 +59,6 @@ bot.on('message', message => {
     if (message.content.startsWith('/loja')){
         message.channel.send('Em desenvolvimento!');
     }
-    let arraymsg = message.content.split(" ");
-let cmd = arraymsg[0].toLowerCase()
-  if(cmd === '/ping') {
-    message.channel.send(`Meu ping é***${Math.round(client.ping)}ms!***`);
-  }
 });
 bot.on('guildMemberAdd', member => {
   const randomColor = "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); });
