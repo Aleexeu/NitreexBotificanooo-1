@@ -7,6 +7,25 @@ client.on('ready', () => {
     console.log('Logado');
 });
 client.on('message', message => {
+    let arraymsg = message.content.split(" ");
+let cmd = arraymsg[0].toLowerCase()
+    if(cmd === '/say'){
+    let args = message.content.split(" ").slice(1)
+
+    if(!message.member.hasPermission("MANAGE_ROLES")) return;
+    const sayMessage = args.join(" ");
+    message.delete()
+    
+    const embed = new Discord.RichEmbed()
+    
+
+    .setDescription(sayMessage)
+ 
+    
+    message.channel.send(embed);
+    }
+});
+client.on('message', message => {
     if (message.content === 'Oi') {
     	message.reply('Olá, tudo bem ?');
     }
