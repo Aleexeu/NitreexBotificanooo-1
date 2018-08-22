@@ -9,24 +9,21 @@ bot.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
 let args = message.content.split(" ").slice(1);
-    if(cmd === '/anuncio'){
-  // comando anuncio
-    if(!message.member.hasPermissions("MANAGE_ROLES")) return message.channel.send(`❌|**${message.author.username}** você não tem permissão suficiente para usar esse comando `)
-    const sayMessage = args.join(" ");
-    
-    const embed = new Discord.RichEmbed()
-    
-    .setTitle('📢 **Anuncio** 📢')
-    .setDescription(sayMessage)
-    .setFooter(`Enviado por: ${message.author.username}`)
-    .setTimestamp(new Date())
-    .setColor('RANDOM')
-    .setThumbnail(message.guild.iconURL);
-    
-    
-    message.channel.send(embed);
-    
+if(cmd === '/anuncio'){
+    const args = message.content.split(" ").slice(1);
+    const prefix = '.'
+    if (!args.slice(0).join(' ')) return message.channel.send('test')
+    message.channel.send({embed:{
+        'title':'Votaçao',
+        'description':args.slice(0).join(' ')
+        ,'color':message.member.highestRole.color,
+        "thumbnail":{
+            url: message.author.avatarURL
+            }
+        }
     }
+    )
+}
 });
 bot.on('message', message => {
     let arraymsg = message.content.split(" ");
