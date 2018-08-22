@@ -8,6 +8,25 @@ bot.on('ready', () => {
 bot.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
+let args = message.content.split(" ").slice(1);
+    if(cmd === '/anuncio'){
+
+    if(!message.member.hasPermission("MANAGE_ROLES")) return;
+       const sayMessage = args.join(" ");
+    message.delete()
+    
+       const embed = new Discord.RichEmbed()
+    
+       .setTitle('📢 **Anuncio** 📢')
+       .setDescription(sayMessage)
+    
+    
+       message.channel.send(embed);
+    }
+});
+bot.on('message', message => {
+    let arraymsg = message.content.split(" ");
+let cmd = arraymsg[0].toLowerCase()
 let args = message.content.split(" ").slice(1)
     if(cmd === '/ban'){
         const args = message.content.split(" ").slice(1);
