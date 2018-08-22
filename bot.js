@@ -13,7 +13,6 @@ let args = message.content.split(" ").slice(1);
   // comando anuncio
     if(!message.member.hasPermissions("ADMINISTRATOR")) return message.channel.send(`❌|**${message.author.username}** você não tem permissão suficiente para usar esse comando `)
     const sayMessage = args.join(" ");
-    message.delete()
     
     const embed = new Discord.RichEmbed()
     
