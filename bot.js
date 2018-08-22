@@ -7,6 +7,27 @@ client.on('ready', () => {
     console.log('Logado');
 });
 client.on('message', message => {
+let arraymsg = message.content.split(" ");
+let cmd = arraymsg[0].toLowerCase()
+    if(cmd === '/anuncio'){
+        let args = message.content.split(" ").slice(1);
+
+    if(!message.member.hasPermission("MANAGE_ROLES")) return;
+        const sayMessage = args.join(" ");
+        message.delete()
+        
+        const embed = new Discord.RichEmbed()
+        
+        .setTitle('📢 **Anuncio** 📢')
+        .setDescription(sayMessage)
+        .setFooter(`Enviado por: ${message.author.username}`)
+        .setTimestamp(new Date())
+        .setColor('RANDOM')
+        
+        
+        message.channel.send(embed);
+        }
+});
     if (message.content === 'Oi') {
     	message.reply('Olá, tudo bem ?');
     }
@@ -56,25 +77,6 @@ client.on('guildMemberAdd', member => {
   .setColor(randomColor)
   .setDescription(`🎈 **|** ${member} **Seja bem-vindo(a) ao nosso servidor.**`)
   canal.send({embed : embed})
-});
-client.on('message', message => {
-    let arraymsg = message.content.split(" ");
-let cmd = arraymsg[0].toLowerCase()
-    if(cmd === '/say'){
-        let args = message.content.split(" ").slice(1);
-    
-    if(!message.member.hasPermission("MANAGE_ROLES")) return;
-        const sayMessage = args.join(" ");
-        message.delete()
-            
-        const embed = new Discord.RichEmbed()
-            
-        .setDescription(sayMessage)
-
-            
-            
-        message.channel.send(embed);
-    }
 });
 
 // THIS  MUST  BE  THIS  WAY
