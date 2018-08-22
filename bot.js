@@ -7,28 +7,6 @@ client.on('ready', () => {
     console.log('Logado');
 });
 client.on('message', message => {
-    let arraymsg = message.content.split(" ");
-let cmd = arraymsg[0].toLowerCase()
-    if(cmd === 'x!anucio'){
-
-if(!message.member.hasPermission("ADMINISTRATOR")) return;
-const sayMessage = args.join(" ");
-message.delete()
-
-const embed = new Discord.RichEmbed()
-
-.setTitle('📢 **Anuncio** 📢')
-.setDescription(sayMessage)
-.setFooter(`Enviado por: ${message.author.username}`)
-.setTimestamp(new Date())
-.setColor('RANDOM')
-.setThumbnail(message.guild.iconURL);
-
-
-message.channel.send(embed);
-}
-});
-client.on('message', message => {
     if (message.content === 'Oi') {
     	message.reply('Olá, tudo bem ?');
     }
