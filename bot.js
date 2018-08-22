@@ -7,7 +7,7 @@ client.on('ready', () => {
     console.log('Logado');
 });
 client.on('message', message => {
-let arraymsg = message.content.split(" ");
+     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
     if(cmd === '/anuncio'){
         let args = message.content.split(" ").slice(1);
@@ -27,7 +27,6 @@ let cmd = arraymsg[0].toLowerCase()
         
         message.channel.send(embed);
         }
-});
     if (message.content === 'Oi') {
     	message.reply('Olá, tudo bem ?');
     }
