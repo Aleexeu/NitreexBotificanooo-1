@@ -54,7 +54,7 @@ bot.on('message', message => {
         message.channel.send('Nosso ip é: ghostminigames.com ou ghostsurvival.com');
     }
     if (message.content.startsWith('/comandos')){
-        message.channel.send('Meus comandos são: /twitter - /loja - /ping - /ip')
+        message.channel.send('Meus comandos são: /twitter - /loja - /ip')
     }
     if (message.content.startsWith('/loja')){
         message.channel.send('Em desenvolvimento!');
