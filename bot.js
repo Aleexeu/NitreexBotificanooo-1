@@ -14,6 +14,7 @@ if(cmd === '/anuncio'){
     const prefix = '/'
     if (!args.slice(0).join(' ')) return message.channel.send('test')
     message.channel.send({embed:{
+        message.delete()
         'description':args.slice(0).join(' ')
         ,'color':message.member.highestRole.color,
         "thumbnail":{
