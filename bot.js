@@ -11,7 +11,7 @@ let cmd = arraymsg[0].toLowerCase()
 let args = message.content.split(" ").slice(1);
     if(cmd === '/anuncio'){
   // comando anuncio
-    if(!message.member.hasPermissions("ADMINISTRATOR")) return message.channel.send(`❌|**${message.author.username}** você não tem permissão suficiente para usar esse comando `)
+    if(!message.member.hasPermissions("MANAGE_ROLES")) return message.channel.send(`❌|**${message.author.username}** você não tem permissão suficiente para usar esse comando `)
     const sayMessage = args.join(" ");
     
     const embed = new Discord.RichEmbed()
