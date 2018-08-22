@@ -18,11 +18,7 @@ let cmd = arraymsg[0].toLowerCase()
         
     const embed = new Discord.RichEmbed()
         
-    .setTitle('📢 **Anuncio** 📢')
     .setDescription(sayMessage)
-    .setFooter(`Enviado por: ${message.author.username}`)
-    .setTimestamp(new Date())
-    .setColor('RANDOM')
         
 
     message.channel.send(embed);
