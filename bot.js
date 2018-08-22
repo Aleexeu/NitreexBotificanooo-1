@@ -24,6 +24,17 @@ let cmd = arraymsg[0].toLowerCase()
     
     message.channel.send(embed);
     }
+    if(cmd === '/ban'){
+        const args = message.content.split(" ").slice(1);
+        var razao = args.slice(1).join(" ")
+            var membro = message.mentions.members.first();
+            if(!message.member.hasPermissions("BAN_MEMBERS")) return message.reply("você não tem permissão de usar esse comando")
+            if(!membro) return message.reply("você não mencinou ninguém")
+            if(!membro.bannable) return message.reply("Você não pode banir essa pessoa")
+            if(razao.length < 1) return message.reply("Coloque um motivo!")
+            membro.ban()
+            message.channel.send(`O membro ${membro.user.username} foi banido do servidor.\nMotivo: ${razao}`)
+      }
 });
 client.on('message', message => {
     if (message.content === 'Oi') {
@@ -48,21 +59,6 @@ client.on('message', message => {
 let cmd = arraymsg[0].toLowerCase()
   if(cmd === '/ping') {
     message.channel.send(`Meu ping é***${Math.round(client.ping)}ms!***`);
-  }
-});
-client.on('message', message => {
-  let arraymsg = message.content.split(" ");
-let cmd = arraymsg[0].toLowerCase()
-  if(cmd === '/ban'){
-    const args = message.content.split(" ").slice(1);
-    var razao = args.slice(1).join(" ")
-        var membro = message.mentions.members.first();
-        if(!message.member.hasPermissions("BAN_MEMBERS")) return message.reply("você não tem permissão de usar esse comando")
-        if(!membro) return message.reply("você não mencinou ninguém")
-        if(!membro.bannable) return message.reply("Você não pode banir essa pessoa")
-        if(razao.length < 1) return message.reply("Coloque um motivo!")
-        membro.ban()
-        message.channel.send(`O membro ${membro.user.username} foi banido do servidor.\nMotivo: ${razao}`)
   }
 });
 client.on('guildMemberAdd', member => {
