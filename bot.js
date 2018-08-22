@@ -60,28 +60,6 @@ client.on('guildMemberAdd', member => {
 client.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
-    if(cmd === '/anuncio'){
-        let args = message.content.split(" ").slice(1);
-
-    if(!message.member.hasPermission("MANAGE_ROLES")) return;
-        const sayMessage = args.join(" ");
-        message.delete()
-        
-        const embed = new Discord.RichEmbed()
-        
-        .setTitle('📢 **Anuncio** 📢')
-        .setDescription(sayMessage)
-        .setFooter(`Enviado por: ${message.author.username}`)
-        .setTimestamp(new Date())
-        .setColor('RANDOM')
-        
-        
-        message.channel.send(embed);
-        }
-    });
-client.on('message', message => {
-    let arraymsg = message.content.split(" ");
-let cmd = arraymsg[0].toLowerCase()
     if(cmd === '/say'){
         let args = message.content.split(" ").slice(1);
     
