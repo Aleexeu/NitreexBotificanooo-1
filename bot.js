@@ -8,18 +8,6 @@ client.on('ready', () => {
 client.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
-let args = message.content.split(" ").slice(1);
-    if(cmd === '/anuncio'){
-    if(!message.member.hasPermission("MANAGE_ROLES")) return;
-       const sayMessage = args.join(" ");
-       const embed = new Discord.RichEmbed()
-       .setDescription(sayMessage)
-       message.channel.send(embed);
-    }
-});
-client.on('message', message => {
-    let arraymsg = message.content.split(" ");
-let cmd = arraymsg[0].toLowerCase()
 let args = message.content.split(" ").slice(1)
     if(cmd === '/ban'){
         const args = message.content.split(" ").slice(1);
