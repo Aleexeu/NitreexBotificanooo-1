@@ -52,13 +52,13 @@ bot.on('message', message => {
         message.channel.send('Twitter:  https://twitter.com/ServidoresGhost');
     }
     if (message.content.startsWith('/ip')){
-        message.channel.send('Nosso ip é: ghostminigames.com ou ghostsurvival.com');
+        message.channel.send('Nosso ip é: ghostminigames.com.');
     }
     if (message.content.startsWith('/comandos')){
         message.channel.send('Meus comandos são: /twitter - /loja - /ip')
     }
     if (message.content.startsWith('/loja')){
-        message.channel.send('Em desenvolvimento!');
+        message.channel.send('Aqui está: http://www.redeghost.com/');
     }
 });
 bot.on('guildMemberAdd', member => {
