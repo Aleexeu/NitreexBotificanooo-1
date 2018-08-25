@@ -73,7 +73,7 @@ bot.on('guildMemberAdd', member => {
 
   » **IP:** ghostminigames.com
   » **Twitter:** https://twitter.com/ServidoresGhost
-  » **Loja:** https://loja.redeghost.com/
+  » **Loja:** http://www.redeghost.com/loja
   » **Site:** https://www.redeghost.com/`)
   .setThumbnail(member.user.displayAvatarURL)
   canal.send({embed : embed})
