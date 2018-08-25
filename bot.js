@@ -72,7 +72,6 @@ bot.on('guildMemberAdd', member => {
   .setDescription(`🎈 **Olá ${member}, seja bem-vindo ao Discord oficial da Rede Ghost!**
 
   » **IP:** ghostminigames.com
-  » **IP:** ghostsurvival.com
   » **Twitter:** https://twitter.com/ServidoresGhost
   » **Loja:** https://loja.redeghost.com/
   » **Site:** https://www.redeghost.com/`)
