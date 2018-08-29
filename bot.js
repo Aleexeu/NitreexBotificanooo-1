@@ -55,7 +55,7 @@ bot.on('message', message => {
         message.channel.send('Nosso ip é: ghostminigames.com.');
     }
     if (message.content.startsWith('/comandos')){
-        message.channel.send('Meus comandos são: /twitter - /loja - /ip')
+        message.channel.send('Meus comandos são: /twitter - /loja - /ip - /avata - /report - /report')
     }
     if (message.content.startsWith('/loja')){
         message.channel.send('Aqui está: http://www.redeghost.com/');
