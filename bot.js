@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 
 
 bot.on('ready', () => {
-    bot.user.setPresence({ game: { name: `» IP: ghostminigames.com | » IP: ghostsurvival.com`, type: 1, url: 'https://www.youtube.com/yRecky'} });
+    bot.user.setPresence({ game: { name: `» IP: ghostminigames.com `, type: 1, url: 'https://www.youtube.com/yRecky'} });
     console.log('Logado');
 });
 bot.on('message', message => {
