@@ -78,6 +78,151 @@ bot.on('guildMemberAdd', member => {
   .setThumbnail(member.user.displayAvatarURL)
   canal.send({embed : embed})
 });
+bot.on('message', message => {
+    let arraymsg = message.content.split(" ");
+let cmd = arraymsg[0].toLowerCase()
+    if(cmd === '/vip'){
+    message.channel.send('Carregando').then(msg => setTimeout(() => {
+        msg.edit('Infelizmente deu erro, tente novamente!');
+    }, 8000));
+    }
+});
+bot.on('message', message => {
+    let arraymsg = message.content.split(" ");
+let cmd = arraymsg[0].toLowerCase()
+const args = message.content.split (" ").slice(1);
+    if(cmd === '/say'){
+        message.delete();
+        message.channel.send(args.join(" "))
+}});
+bot.on('message', message => {
+    let arraymsg = message.content.split(" ");
+let cmd = arraymsg[0].toLowerCase()
+const args = message.content.split (" ").slice(1);
+    if(cmd === '/avata'){
+let member = message.mentions.users.first() || bot.users.get(args[0]) || message.author;
+    let avatar = member.displayAvatarURL;
+    if (avatar.endsWith(".gif")) {
+        avatar = `${member.displayAvatarURL}?size=2048`
+    }
+    message.channel.send({
+        embed: {
+            title: `${member.tag}`,
+            description: `[Link Direto](${avatar})`,
+            image: {
+                url: avatar
+            }
+        }
+    })
+    }});
+bot.on('message', message => {
+    let arraymsg = message.content.split(" ");
+let cmd = arraymsg[0].toLowerCase()
+const args = message.content.split (" ").slice(1);
+    if(cmd === '/report'){
+        if (message.mentions.users.size  == 0) return message.reply('Mencione alguém.')
+if (!args.slice(1).join(' ')) return message.reply('Diga o motivo da denuncia! use /denuncia (usuario) (motivo).')
+var canal = message.guild.channels.find("name", "reports");
+if (!canal) return;
+canal.send({embed:{
+    'title':'Denuncia',
+    'description':args.slice(1).join(' '),
+    'thumbnail':{
+        'url':message.mentions.users.first().avatarURL
+    }
+    ,'footer':{
+        'text':'Denuncia enviada por: ' + message.author.tag
+    },
+    'color':message.member.displayColor
+}})
+message.reply('Sua denuncia foi enviada com sucesso!')
+    }});
+bot.on('message', message => {
+    let arraymsg = message.content.split(" ");
+let cmd = arraymsg[0].toLowerCase()
+const args = message.content.split (" ").slice(1);
+    if(message.content.startsWith('/membrosstatus')){
+        let MembrosOnline = message.guild.members.filter(a => a.presence.status == "online").size;
+        let MembrosOcupado = message.guild.members.filter(a => a.presence.status == "dnd").size;
+        let MembrosAusente = message.guild.members.filter(a => a.presence.status == "idle").size;
+        let MembrosOffline = message.guild.members.filter(a => a.presence.status == "offline").size;
+    
+        let statusembed = new Discord.RichEmbed()
+        .addField('Membros', `**Online:** ${MembrosOnline} | **Ausente:** ${MembrosAusente} | **Ocupado:** ${MembrosOcupado} | **Offline:** ${MembrosOffline} `) ;
+        
+        message.channel.send(statusembed);
+    }
+});
+bot.on('message', message => {
+    let arraymsg = message.content.split(" ");
+let cmd = arraymsg[0].toLowerCase()
+const args = message.content.split (" ").slice(1);
+if (message.content.includes("https://discord.gg/")) {
+        if (!message.member.hasPermission("ADMINISTRATOR")) {
+            message.delete();
+            message.reply("❌ **Você não pode divulgar aqui!**");
+        }
+
+    }
+    });
+bot.on('message', message => {
+    let arraymsg = message.content.split(" ");
+let cmd = arraymsg[0].toLowerCase()
+const args = message.content.split (" ").slice(1);
+        if(cmd === '/limpar'){
+            if (message.channel.type === "/limpar") return;
+            if (message.channel.permissionsFor(message.author).has('MANAGE_MESSAGES')) {
+                if (args.length === 0) {
+                    return;
+                } else if (args.length === 1) {
+                    message.channel.fetchMessages({
+                        limit: parseInt(args[0]) + 1
+                    }).then((messages) => {
+                        message.channel.bulkDelete(messages);
+                    });
+                } else if (args.length === 2) {
+                    message.channel.fetchMessages({
+                        limit: parseInt(args[0]) + 1
+                    }).then((messages) => {
+                        let bulkMessages = [];
+                        messages.forEach((i) => {
+                            if (i.author.id === args[1].replace(/@|<|>/g, "")) {
+                                bulkMessages.push(i);
+                            }
+                        });
+                        message.channel.bulkDelete(bulkMessages);
+                    });
+                }
+            }
+        }
+            });
+bot.on('message', message => {
+    let arraymsg = message.content.split(" ");
+let cmd = arraymsg[0].toLowerCase()
+    const args = message.content.split (" ").slice(1);
+    if(cmd === '/corrida'){
+        let user = message.mentions.users.first();
+        if (!user) return message.reply('**Você não mencionou o usuario que você quer correr!**').catch(console.error);
+        const Corrida = "<@" + message.author.id + ">" 
+        const corrida2 =  " <@" + user.id + ">"
+        var falas = [" fez **200** metros 🏎 ....."," fez **500** metros 🏎 ..........."," fez **800** metros 🏎 .............."," fez **1000** metros 🏎 ................."," fez **1500** metros 🏎 ............................","Explodiu 🔥 ","Bateu e pegou fogo 🔥" ]
+        message.channel.send({
+            "embed": {
+                "title": "🏎 Corrida",
+                "description": " O " + Corrida + " e" +  corrida2 + " **estao disputando uma corrida**" ,
+                "color": "65535",
+                
+                "fields": [
+                    {
+                        "name":"Sobre a corrida:",
+                        "value":  "O " + Corrida +  "\n" + falas[Math.round(Math.random() * falas.length)]  + "\n" +  "O " + corrida2 +  "\n" + falas[Math.round(Math.random() * falas.length)],
+                        "inline": false
+                      }
+                  ]
+              }
+          })
+        }
+    });
 
 // THIS  MUST  BE  THIS  WAY
 bot.login(process.env.BOT_TOKEN);
