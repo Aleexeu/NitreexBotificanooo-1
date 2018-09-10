@@ -52,7 +52,7 @@ bot.on('message', message => {
         message.channel.send('Twitter:  https://twitter.com/ServidoresGhost');
     }
     if (message.content.startsWith('/ip')){
-        message.channel.send('Nosso ip é: ghostminigames.com.');
+        message.channel.send('Nosso ip é: minigames.redeghost.com.');
     }
     if (message.content.startsWith('/comandos')){
         message.channel.send('Meus comandos são: /twitter - /loja - /ip - /avata - /report - /report')
@@ -71,7 +71,7 @@ bot.on('guildMemberAdd', member => {
   .setColor(randomColor)
   .setDescription(`🎈 **Olá ${member}, seja bem-vindo ao Discord oficial da Rede Ghost!**
 
-  » **IP:** ghostminigames.com
+  » **IP:** minigames.redeghost.com
   » **Twitter:** https://twitter.com/ServidoresGhost
   » **Loja:** http://www.redeghost.com/loja
   » **Site:** https://www.redeghost.com/`)
