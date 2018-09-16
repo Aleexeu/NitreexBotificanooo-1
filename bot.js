@@ -224,6 +224,9 @@ let cmd = arraymsg[0].toLowerCase()
         }
     });
 bot.on('message', message => {
+    let arraymsg = message.content.split(" ");
+let cmd = arraymsg[0].toLowerCase()
+let args = message.content.split(" ").slice(1)
     if(cmd === '/sugestao'){
         exports.run = (client,message,args)=>{
     var sugest = args.slice(0).join(" ");
