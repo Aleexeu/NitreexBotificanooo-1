@@ -141,7 +141,7 @@ bot.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
 const args = message.content.split (" ").slice(1);
-    if(message.content.startsWith('/membrosstatus')){
+    if(message.content.startsWith('/serveinfo')){
         let MembrosOnline = message.guild.members.filter(a => a.presence.status == "online").size;
         let MembrosOcupado = message.guild.members.filter(a => a.presence.status == "dnd").size;
         let MembrosAusente = message.guild.members.filter(a => a.presence.status == "idle").size;
