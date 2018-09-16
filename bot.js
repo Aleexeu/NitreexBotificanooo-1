@@ -223,6 +223,36 @@ let cmd = arraymsg[0].toLowerCase()
           })
         }
     });
+bot.on('guildMemberAdd', member => { 
+    
+  let embed = new Discord.RichEmbed()
+.addField("Clique no emoji abaixo para completar a verificação!", " https://litaricy-shop.com @LitaricyShop_")
+.setColor('#FF0000')
+.setAuthor(`Litaricy - Verificação`, 'https://cdn.discordapp.com/attachments/444957023130353674/462671084907528213/460264772869554176.gif')
+.setTimestamp();
+
+
+
+member.guild.channels.get('484143925041430558').send(`** ** ` + `<@` + member.user.id  + `>`);
+
+member.guild.channels.get('484143925041430558').send(embed).then(cona=> {
+  cona.react('⭕')
+})
+ 
+
+  })
+
+
+
+
+client.on('messageReactionAdd', (reaction, user) => {
+  if(reaction.emoji.name === "⭕" && user.id !== client.user.id) {
+       reaction.remove(user)
+       client.guilds.get("484143925041430558").members.get(user.id).addRole('484143925041430558')
+       client.guilds.get('484143925041430558").members.get(user.id).removeRole('484143925041430558')
+       
+  }
+});
 
 // THIS  MUST  BE  THIS  WAY
 bot.login(process.env.BOT_TOKEN);
