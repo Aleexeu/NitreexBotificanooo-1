@@ -49,32 +49,32 @@ bot.on('message', message => {
         message.reply('pong');
   	}
     if (message.content.startsWith('/twitter')){
-        message.channel.send('Twitter:  https://twitter.com/ServidoresGhost');
+        message.channel.send('Twitter: https://twitter.com/RedeCrownMC');
     }
     if (message.content.startsWith('/ip')){
-        message.channel.send('Nosso ip é: minigames.redeghost.com.');
+        message.channel.send('Nosso ip é: CrownMC.reis.host');
     }
     if (message.content.startsWith('/comandos')){
         message.channel.send('Meus comandos são: /twitter - /loja - /ip - /avata - /report ')
     }
     if (message.content.startsWith('/loja')){
-        message.channel.send('Aqui está: http://www.redeghost.com/');
+        message.channel.send('Em desenvolvimento! ');
     }
 });
 bot.on('guildMemberAdd', member => {
   const randomColor = "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); });
  
-  let canal = member.guild.channels.find(`name`, "📥entrada");
+  let canal = member.guild.channels.find(`name`, "🎉bem-vindo🎉");
   if (!canal) return;
 
   var embed = new Discord.RichEmbed()
   .setColor(randomColor)
   .setDescription(`🎈 **Olá ${member}, seja bem-vindo ao Discord oficial da Rede Ghost!**
 
-  » **IP:** minigames.redeghost.com
-  » **Twitter:** https://twitter.com/ServidoresGhost
-  » **Loja:** http://www.redeghost.com/loja
-  » **Site:** https://www.redeghost.com/`)
+  » **IP:** CrownMC.reis.host
+  » **Twitter:** https://twitter.com/RedeCrownMC
+  » **Loja:** Em desenvolvimento!
+  » **Site:** Em desenvolvimento!`)
   .setThumbnail(member.user.displayAvatarURL)
   canal.send({embed : embed})
 });
