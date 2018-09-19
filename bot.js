@@ -64,12 +64,12 @@ bot.on('message', message => {
 bot.on('guildMemberAdd', member => {
   const randomColor = "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); });
  
-  let canal = member.guild.channels.find(`name`, "✔️entrada");
+  let canal = member.guild.channels.find(`name`, "📥entrada");
   if (!canal) return;
 
   var embed = new Discord.RichEmbed()
   .setColor(randomColor)
-  .setDescription(`🎈 **Olá ${member}, seja bem-vindo ao Discord oficial da Rede Ghost!**
+  .setDescription(`🎈 **Olá ${member}, seja bem-vindo ao Discord oficial da CrownMC**
 
   » **IP:** CrownMC.reis.host
   » **Twitter:** https://twitter.com/RedeCrownMC
