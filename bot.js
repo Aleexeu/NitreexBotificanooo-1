@@ -30,8 +30,6 @@ bot.on('message', message => {
 let cmd = arraymsg[0].toLowerCase()
 let args = message.content.split(" ").slice(1)
     if(cmd === '/ban'){
-  let canal = member.guild.channels.find(`name`, "👮punições👮");
-  if (!canal) return;
         const args = message.content.split(" ").slice(1);
         var razao = args.slice(1).join(" ")
             var membro = message.mentions.members.first();
