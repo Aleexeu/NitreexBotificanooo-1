@@ -73,8 +73,7 @@ bot.on('guildMemberAdd', member => {
 
   » **IP:** CrownMC.reis.host
   » **Twitter:** https://twitter.com/RedeCrownMC
-  » **Loja:** Em desenvolvimento!
-  » **Site:** Em desenvolvimento!`)
+  » **Loja:** Em desenvolvimento!`)
   .setThumbnail(member.user.displayAvatarURL)
   canal.send({embed : embed})
 });
