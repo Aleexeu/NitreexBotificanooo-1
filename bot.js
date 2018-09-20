@@ -30,6 +30,8 @@ bot.on('message', message => {
 let cmd = arraymsg[0].toLowerCase()
 let args = message.content.split(" ").slice(1)
     if(cmd === '/ban'){
+  let canal = member.guild.channels.find(`name`, "👮punições👮");
+  if (!canal) return;
         const args = message.content.split(" ").slice(1);
         var razao = args.slice(1).join(" ")
             var membro = message.mentions.members.first();
@@ -72,8 +74,7 @@ bot.on('guildMemberAdd', member => {
   .setDescription(`🎈 **Olá ${member}, seja bem-vindo ao Discord oficial da CrownMC**
 
   » **IP:** CrownMC.reis.host
-  » **Twitter:** https://twitter.com/RedeCrownMC
-  » **Loja:** Em desenvolvimento!`)
+  » **Twitter:** https://twitter.com/RedeCrownMC`)
   .setThumbnail(member.user.displayAvatarURL)
   canal.send({embed : embed})
 });
