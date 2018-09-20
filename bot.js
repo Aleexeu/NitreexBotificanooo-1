@@ -117,27 +117,6 @@ bot.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
 const args = message.content.split (" ").slice(1);
-    if(cmd === '/report'){
-if (!args.slice(1).join(' ')) return message.reply('Diga o motivo da denuncia! use /denuncia (usuario) (motivo).')
-var canal = message.guild.channels.find("name", "reports");
-if (!canal) return;
-canal.send({embed:{
-    'title':'Denuncia',
-    'description':args.slice(1).join(' '),
-    'thumbnail':{
-        'url':message.mentions.users.first().avatarURL
-    }
-    ,'footer':{
-        'text':'Denuncia enviada por: ' + message.author.tag
-    },
-    'color':message.member.displayColor
-}})
-message.reply('Sua denuncia foi enviada com sucesso!')
-    }});
-bot.on('message', message => {
-    let arraymsg = message.content.split(" ");
-let cmd = arraymsg[0].toLowerCase()
-const args = message.content.split (" ").slice(1);
     if(message.content.startsWith('/serveinfo')){
         let MembrosOnline = message.guild.members.filter(a => a.presence.status == "online").size;
         let MembrosOcupado = message.guild.members.filter(a => a.presence.status == "dnd").size;
