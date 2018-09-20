@@ -71,7 +71,7 @@ bot.on('guildMemberAdd', member => {
   .setColor(randomColor)
   .setDescription(`🎈 **Olá ${member}, seja bem-vindo ao Discord oficial da CrownMC**
 
-  » **IP:** CrownMC.reis.host 
+  » **IP:** CrownMC.reis.host <:infinito:492132506477395983>
   » **Twitter:** https://twitter.com/RedeCrownMC`)
   .setThumbnail(member.user.displayAvatarURL)
   canal.send({embed : embed})
