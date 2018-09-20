@@ -118,7 +118,6 @@ bot.on('message', message => {
 let cmd = arraymsg[0].toLowerCase()
 const args = message.content.split (" ").slice(1);
     if(cmd === '/report'){
-        if (message.mentions.users.size  == 0) return message.reply('Mencione alguém.')
 if (!args.slice(1).join(' ')) return message.reply('Diga o motivo da denuncia! use /denuncia (usuario) (motivo).')
 var canal = message.guild.channels.find("name", "reports");
 if (!canal) return;
