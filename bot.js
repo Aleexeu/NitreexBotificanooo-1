@@ -10,7 +10,7 @@ bot.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
 let args = message.content.split(" ").slice(1);
-if(cmd === '/anuncio'){
+if(cmd === 'h!anuncio'){
     const args = message.content.split(" ").slice(1);
     const prefix = '/'
     message.delete()
@@ -89,7 +89,7 @@ bot.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
 const args = message.content.split (" ").slice(1);
-    if(cmd === '/say'){
+    if(cmd === 'h!say'){
         message.delete();
         message.channel.send(args.join(" "))
 }});
