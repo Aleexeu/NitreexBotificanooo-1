@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 
 
 bot.on('ready', () => {
-    bot.user.setPresence({ game: { name: `» IP: CrownMC.reis.host `, type: 1, url: 'https://www.youtube.com/yRecky'} });
+    let status = [
         {name: 'Ajuda?│!ajuda', type: 'STREAMING', url: 'https://twitch.tv/srmisterii'},
         {name: '😍Nighty » Community😍', type: 'LISTENING'},
         {name: '😉Steam😉', type: 'PLAYING'},
@@ -17,7 +17,7 @@ bot.on('ready', () => {
       
         function setStatus() {
             let randomStatus = status[Math.floor(Math.random() * status.length)];
-            client.user.setPresence({game: randomStatus});
+            bot.user.setPresence({game: randomStatus});
         }
       
         setStatus();
