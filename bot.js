@@ -4,6 +4,25 @@ const bot = new Discord.Client();
 
 bot.on('ready', () => {
     bot.user.setPresence({ game: { name: `» IP: CrownMC.reis.host `, type: 1, url: 'https://www.youtube.com/yRecky'} });
+        {name: 'Ajuda?│!ajuda', type: 'STREAMING', url: 'https://twitch.tv/srmisterii'},
+        {name: '😍Nighty » Community😍', type: 'LISTENING'},
+        {name: '😉Steam😉', type: 'PLAYING'},
+        {name: 'Sr.Misterii│YouTube', type: 'WATCHING'},
+      ];
+      
+      //STREAMING = Transmitindo
+      //LISTENING = Ouvindo
+      //PLAYING = Jogando
+      //WATCHING = Assistindo
+      
+        function setStatus() {
+            let randomStatus = status[Math.floor(Math.random() * status.length)];
+            client.user.setPresence({game: randomStatus});
+        }
+      
+        setStatus();
+        setInterval(() => setStatus(), 10000);  //10000 = 10Ms = 10 segundos
+});
     console.log('Logado');
 });
 bot.on('message', message => {
