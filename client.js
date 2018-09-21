@@ -110,5 +110,5 @@ client.on("message", async message => {
   }
 });
 
-// THIS  MUST  BE  THIS  WAY
-client.run(process.env.BOT_TOKEN);
+
+client.login(config.token);
