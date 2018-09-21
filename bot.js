@@ -199,6 +199,28 @@ let cmd = arraymsg[0].toLowerCase()
           })
         }
     });
+bot.on('ready', () =>{
+    let status = [
+        {name: 'Alegria pro povo', type: 'STREAMING', url: 'https://twitch.tv/iluccaz_owna'},
+        {name: 'Cepo de madeira', type: 'LISTENING'},
+        {name: 'Meu pau na sua cara', type: 'PLAYING'},
+        {name: 'Sua mãe pelada', type: 'WATCHING'},
+        {name: 'Minecraft', type: 'PLAYING'}
+      ];
+      
+      //STREAMING = Transmitindo
+      //LISTENING = Ouvindo
+      //PLAYING = Jogando
+      //WATCHING = Assistindo
+      
+        function setStatus() {
+            let randomStatus = status[Math.floor(Math.random() * status.length)];
+            client.user.setPresence({game: randomStatus});
+        }
+      
+        setStatus();
+        setInterval(() => setStatus(), 10000);  //10000 = 10Ms = 10 segundos
+});
 
 // THIS  MUST  BE  THIS  WAY
 bot.login(process.env.BOT_TOKEN);
