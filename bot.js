@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
-const bot = new Discord.bot(); 
+const bot = new Discord.Client(); 
+
 
 bot.on('ready', () =>{
     let status = [
@@ -7,7 +8,7 @@ bot.on('ready', () =>{
         {name: 'heart_eyesNighty » Communityheart_eyes', type: 'LISTENING'},
         {name: 'winkSteamwink', type: 'PLAYING'},
         {name: 'NitrooPVP│YouTube', type: 'WATCHING'},
-      ];
+      ]
       
       //STREAMING = Transmitindo
       //LISTENING = Ouvindo
