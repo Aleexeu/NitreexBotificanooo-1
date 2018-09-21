@@ -4,9 +4,10 @@ const bot = new Discord.Client();
 
 bot.on('ready', () => {
     let status = [
-        {name: 'comandos?│/comandos', type: 'STREAMING', url: 'https://twitch.tv/nitroopvp'},
-        {name: 'CrownMC.reis.host', type: 'LISTENING', url: 'https://youtu.be/ExpnB7jwhZE'},
-        {name: 'Fui desenvolvido pelo NitrooPVP#4025', type: 'PLAYING', url: 'https://twitch.tv/srmiterii'},
+        {name: 'comandos? | /comandos, type: 'STREAMING', url: 'https://twitch.tv/srmisterii'},
+        {name: '😍Nighty » Community😍', type: 'LISTENING'},
+        {name: '😉Steam😉', type: 'PLAYING'},
+        {name: 'NitrooPVP│YouTube', type: 'WATCHING'},
       ];
       
       //STREAMING = Transmitindo
