@@ -22,7 +22,9 @@ bot.on('ready', () =>{
         }
       
         setStatus();
-        setInterval(() => setStatus(), 10000);  //10000 = 10Ms = 10 segundos
+        setInterval(() => setStatus(), 10000);  //10000 = 10Ms = 10 segundos);
+    
+    console.log('Logado');
 });
 bot.on('message', message => {
     let arraymsg = message.content.split(" ");
