@@ -5,7 +5,7 @@ const bot = new Discord.Client();
 bot.on('ready', () => {
     let status = [
         {name: 'comandos?│/comandos', type: 'STREAMING', url: 'https://twitch.tv/srmisterii'},
-        {name: 'IP  CrownMC.reis.host', type: 'STREAMING', url: 'https://twitch.tv/srmisterii'},
+        {name: 'CrownMC.reis.host', type: 'STREAMING', url: 'https://twitch.tv/srmisterii'},
         {name: 'Fui desenvolvido pelo NitrooPVP#4025', type: 'STREAMING', url: 'https://twitch.tv/srmisterii'},
       ];
       
@@ -20,7 +20,7 @@ bot.on('ready', () => {
         }
       
         setStatus();
-        setInterval(() => setStatus(), 10000);  //10000 = 10Ms = 5 segundos
+        setInterval(() => setStatus(), 10000);  //10000 = 10Ms = 10 segundos
     console.log('Logado');
 });
 bot.on('message', message => {
