@@ -4,9 +4,9 @@ const bot = new Discord.Client();
 
 bot.on('ready', () => {
     let status = [
-        {name: 'comandos?│/comandos', type: 'STREAMING', url: 'https://twitch.tv/srmisterii'},
+        {name: 'comandos?│/comandos', type: 'STREAMING', url: 'https://twitch.tv/nitroopvp'},
         {name: 'CrownMC.reis.host', type: 'STREAMING', url: 'https://twitch.tv/srmisterii'},
-        {name: 'Fui desenvolvido pelo NitrooPVP#4025', type: 'STREAMING', url: 'https://twitch.tv/srmisterii'},
+        {name: 'Fui desenvolvido pelo NitrooPVP#4025', type: 'STREAMING', url: 'https://twitch.tv/srmiterii'},
       ];
       
       //STREAMING = Transmitindo
