@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 
 
-client.on('ready', () =>{
+bot.on('ready', () =>{
     let status = [
         {name: 'Alegria pro povo', type: 'STREAMING', url: 'https://twitch.tv/iluccaz_owna'},
         {name: 'Cepo de madeira', type: 'LISTENING'},
