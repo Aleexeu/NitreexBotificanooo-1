@@ -6,7 +6,7 @@ bot.on('ready', () => {
     let status = [
         {name: 'comandos?│/comandos', type: 'STREAMING', url: 'https://twitch.tv/nitroopvp'},
         {name: 'CrownMC.reis.host', type: 'LISTENING', url: 'https://youtu.be/ExpnB7jwhZE'},
-        {name: 'Fui desenvolvido pelo NitrooPVP#4025', type: 'STREAMING', url: 'https://twitch.tv/srmiterii'},
+        {name: 'Fui desenvolvido pelo NitrooPVP#4025', type: 'PLAYING', url: 'https://twitch.tv/srmiterii'},
       ];
       
       //STREAMING = Transmitindo
