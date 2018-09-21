@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 
 bot.on('ready', () => {
     let status = [
-        {name: 'comandos?│/comandos, type: 'STREAMING', url: 'https://twitch.tv/srmisterii'},
+        {name: 'comandos?│/comandos', type: 'STREAMING', url: 'https://twitch.tv/srmisterii'},
         {name: 'test', type: 'STREAMING', url: 'https://twitch.tv/srmisterii'},
       ];
       
