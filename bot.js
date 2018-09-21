@@ -86,7 +86,7 @@ bot.on('guildMemberAdd', member => {
 
   var embed = new Discord.RichEmbed()
   .setColor(randomColor)
-  .setDescription(`  ➜ ${member} Bem-Vindo(a) Ao 30PRAUM, Aqui sua diversão nunca tem fim !`)
+  .setDescription(`  ➜ ${member} Bem-Vindo(a) Ao CrownMC, Aqui sua diversão nunca tem fim !`)
   .setThumbnail(member.user.displayAvatarURL)
   canal.send({embed : embed})
 });
