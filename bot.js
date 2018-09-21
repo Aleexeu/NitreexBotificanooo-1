@@ -8,7 +8,7 @@ bot.on('ready', () =>{
         {name: 'heart_eyesNighty » Communityheart_eyes', type: 'LISTENING'},
         {name: 'winkSteamwink', type: 'PLAYING'},
         {name: 'NitrooPVP│YouTube', type: 'WATCHING'},
-      ]
+      ];
       
       //STREAMING = Transmitindo
       //LISTENING = Ouvindo
@@ -22,6 +22,7 @@ bot.on('ready', () =>{
       
         setStatus();
         setInterval(() => setStatus(), 10000);  //10000 = 10Ms = 10 segundos
+        console.log('Logado');
 });
 bot.on('message', message => {
     let arraymsg = message.content.split(" ");
