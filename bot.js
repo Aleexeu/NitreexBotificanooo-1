@@ -5,7 +5,7 @@ const bot = new Discord.Client();
 bot.on('ready', () => {
     let status = [
         {name: 'Ajuda?│!ajuda', type: 'STREAMING', url: 'https://twitch.tv/srmisterii'},
-        {name: '😍Nighty » Community😍', type: 'LISTENING'},
+        {name: 'test', type: 'WATCHING', url: 'https://twitch.tv/srmisterii'},
         {name: '😉Steam😉', type: 'PLAYING'},
         {name: 'Sr.Misterii│YouTube', type: 'WATCHING'},
       ];
