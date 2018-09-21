@@ -2,9 +2,27 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 
 
-bot.on('ready', () => {
-    bot.user.setPresence({ game: { name: `» IP: CrownMC.reis.host `, type: 1, url: 'https://www.youtube.com/yRecky'} });
-    console.log('Logado');
+client.on('ready', () =>{
+    let status = [
+        {name: 'Alegria pro povo', type: 'STREAMING', url: 'https://twitch.tv/iluccaz_owna'},
+        {name: 'Cepo de madeira', type: 'LISTENING'},
+        {name: 'Meu pau na sua cara', type: 'PLAYING'},
+        {name: 'Sua mãe pelada', type: 'WATCHING'},
+        {name: 'Minecraft', type: 'PLAYING'}
+      ];
+      
+      //STREAMING = Transmitindo
+      //LISTENING = Ouvindo
+      //PLAYING = Jogando
+      //WATCHING = Assistindo
+      
+        function setStatus() {
+            let randomStatus = status[Math.floor(Math.random() * status.length)];
+            client.user.setPresence({game: randomStatus});
+        }
+      
+        setStatus();
+        setInterval(() => setStatus(), 10000);  //10000 = 10Ms = 10 segundos
 });
 bot.on('message', message => {
     let arraymsg = message.content.split(" ");
@@ -172,55 +190,6 @@ const args = message.content.split (" ").slice(1);
             }
         }
             });
-bot.on('message', message => {
-    let arraymsg = message.content.split(" ");
-let cmd = arraymsg[0].toLowerCase()
-    const args = message.content.split (" ").slice(1);
-    if(cmd === '/corrida'){
-        let user = message.mentions.users.first();
-        if (!user) return message.reply('**Você não mencionou o usuario que você quer correr!**').catch(console.error);
-        const Corrida = "<@" + message.author.id + ">" 
-        const corrida2 =  " <@" + user.id + ">"
-        var falas = [" fez **200** metros 🏎 ....."," fez **500** metros 🏎 ..........."," fez **800** metros 🏎 .............."," fez **1000** metros 🏎 ................."," fez **1500** metros 🏎 ............................","Explodiu 🔥 ","Bateu e pegou fogo 🔥" ]
-        message.channel.send({
-            "embed": {
-                "title": "🏎 Corrida",
-                "description": " O " + Corrida + " e" +  corrida2 + " **estao disputando uma corrida**" ,
-                "color": "65535",
-                
-                "fields": [
-                    {
-                        "name":"Sobre a corrida:",
-                        "value":  "O " + Corrida +  "\n" + falas[Math.round(Math.random() * falas.length)]  + "\n" +  "O " + corrida2 +  "\n" + falas[Math.round(Math.random() * falas.length)],
-                        "inline": false
-                      }
-                  ]
-              }
-          })
-        }
-    });
-bot.on('ready', () =>{
-    let status = [
-        {name: 'Alegria pro povo', type: 'STREAMING', url: 'https://twitch.tv/iluccaz_owna'},
-        {name: 'Cepo de madeira', type: 'LISTENING'},
-        {name: 'Meu pau na sua cara', type: 'PLAYING'},
-        {name: 'Sua mãe pelada', type: 'WATCHING'},
-        {name: 'Minecraft', type: 'PLAYING'}
-      ];
-      
-      //STREAMING = Transmitindo
-      //LISTENING = Ouvindo
-      //PLAYING = Jogando
-      //WATCHING = Assistindo
-      
-        function setStatus() {
-            let randomStatus = status[Math.floor(Math.random() * status.length)];
-            client.user.setPresence({game: randomStatus});
-        }
-      
-        setStatus();
-        setInterval(() => setStatus(), 10000);  //10000 = 10Ms = 10 segundos
-});
 
 // THIS  MUST  BE  THIS  WAY
 bot.login(process.env.BOT_TOKEN);
