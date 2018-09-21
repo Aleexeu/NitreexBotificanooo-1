@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
-const client = new Discord.Client(); 
+const bot = new Discord.bot(); 
 
-client.on('ready', () =>{
+bot.on('ready', () =>{
     let status = [
-        {name: 'Ajuda?│!ajuda', type: 'STREAMING', url: 'https://twitch.tv/srmisterii'},}
+        {name: 'Ajuda?│!ajuda', type: 'STREAMING', url: 'https://twitch.tv/srmisterii'},
         {name: 'heart_eyesNighty » Communityheart_eyes', type: 'LISTENING'},
         {name: 'winkSteamwink', type: 'PLAYING'},
         {name: 'NitrooPVP│YouTube', type: 'WATCHING'},
@@ -22,7 +22,7 @@ client.on('ready', () =>{
         setStatus();
         setInterval(() => setStatus(), 10000);  //10000 = 10Ms = 10 segundos
 });
-client.on('message', message => {
+bot.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
 let args = message.content.split(" ").slice(1);
@@ -41,7 +41,7 @@ if(cmd === 'h!anuncio'){
     )
 }
 });
-client.on('message', message => {
+bot.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
 let args = message.content.split(" ").slice(1)
@@ -57,7 +57,7 @@ let args = message.content.split(" ").slice(1)
             message.channel.send(`O membro ${membro.user.username} foi banido do servidor.\nMotivo: ${razao}`)
       }
 });
-client.on('message', message => {
+bot.on('message', message => {
     if (message.content === 'Oi') {
     	message.reply('Olá, tudo bem ?');
     }
@@ -77,7 +77,7 @@ client.on('message', message => {
         message.channel.send('Em desenvolvimento! ');
     }
 });
-client.on('guildMemberAdd', member => {
+bot.on('guildMemberAdd', member => {
   const randomColor = "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); });
  
   let canal = member.guild.channels.find(`name`, "entrada🙋");
@@ -92,7 +92,7 @@ client.on('guildMemberAdd', member => {
   .setThumbnail(member.user.displayAvatarURL)
   canal.send({embed : embed})
 });
-client.on('message', message => {
+bot.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
     if(cmd === '/vip'){
@@ -101,7 +101,7 @@ let cmd = arraymsg[0].toLowerCase()
     }, 8000));
     }
 });
-client.on('message', message => {
+bot.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
 const args = message.content.split (" ").slice(1);
@@ -109,7 +109,7 @@ const args = message.content.split (" ").slice(1);
         message.delete();
         message.channel.send(args.join(" "))
 }});
-client.on('message', message => {
+bot.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
 const args = message.content.split (" ").slice(1);
@@ -129,7 +129,7 @@ let member = message.mentions.users.first() || bot.users.get(args[0]) || message
         }
     })
     }});
-client.on('message', message => {
+bot.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
 const args = message.content.split (" ").slice(1);
@@ -145,7 +145,7 @@ const args = message.content.split (" ").slice(1);
         message.channel.send(statusembed);
     }
 });
-client.on('message', message => {
+bot.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
 const args = message.content.split (" ").slice(1);
@@ -157,7 +157,7 @@ if (message.content.includes("https://discord.gg/")) {
 
     }
     });
-client.on('message', message => {
+bot.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
 const args = message.content.split (" ").slice(1);
@@ -190,4 +190,4 @@ const args = message.content.split (" ").slice(1);
             });
 
 // THIS  MUST  BE  THIS  WAY
-client.login(process.env.BOT_TOKEN);
+bot.login(process.env.BOT_TOKEN);
