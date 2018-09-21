@@ -1,14 +1,12 @@
-const Discord = require('discord.js');
-const bot = new Discord.Client();
+const Discord = require("discord.js");
+const client = new Discord.Client(); 
 
-
-bot.on('ready', () =>{
+client.on('ready', () =>{
     let status = [
-        {name: 'Alegria pro povo', type: 'STREAMING', url: 'https://twitch.tv/iluccaz_owna'},
-        {name: 'Cepo de madeira', type: 'LISTENING'},
-        {name: 'Meu pau na sua cara', type: 'PLAYING'},
-        {name: 'Sua mãe pelada', type: 'WATCHING'},
-        {name: 'Minecraft', type: 'PLAYING'}
+        {name: 'Ajuda?│!ajuda', type: 'STREAMING', url: 'https://twitch.tv/srmisterii'},}
+        {name: 'heart_eyesNighty » Communityheart_eyes', type: 'LISTENING'},
+        {name: 'winkSteamwink', type: 'PLAYING'},
+        {name: 'NitrooPVP│YouTube', type: 'WATCHING'},
       ];
       
       //STREAMING = Transmitindo
@@ -22,11 +20,9 @@ bot.on('ready', () =>{
         }
       
         setStatus();
-        setInterval(() => setStatus(), 10000);  //10000 = 10Ms = 10 segundos);
-    
-    console.log('Logado');
+        setInterval(() => setStatus(), 10000);  //10000 = 10Ms = 10 segundos
 });
-bot.on('message', message => {
+client.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
 let args = message.content.split(" ").slice(1);
@@ -45,7 +41,7 @@ if(cmd === 'h!anuncio'){
     )
 }
 });
-bot.on('message', message => {
+client.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
 let args = message.content.split(" ").slice(1)
@@ -61,7 +57,7 @@ let args = message.content.split(" ").slice(1)
             message.channel.send(`O membro ${membro.user.username} foi banido do servidor.\nMotivo: ${razao}`)
       }
 });
-bot.on('message', message => {
+client.on('message', message => {
     if (message.content === 'Oi') {
     	message.reply('Olá, tudo bem ?');
     }
@@ -81,7 +77,7 @@ bot.on('message', message => {
         message.channel.send('Em desenvolvimento! ');
     }
 });
-bot.on('guildMemberAdd', member => {
+client.on('guildMemberAdd', member => {
   const randomColor = "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); });
  
   let canal = member.guild.channels.find(`name`, "entrada🙋");
@@ -96,7 +92,7 @@ bot.on('guildMemberAdd', member => {
   .setThumbnail(member.user.displayAvatarURL)
   canal.send({embed : embed})
 });
-bot.on('message', message => {
+client.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
     if(cmd === '/vip'){
@@ -105,7 +101,7 @@ let cmd = arraymsg[0].toLowerCase()
     }, 8000));
     }
 });
-bot.on('message', message => {
+client.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
 const args = message.content.split (" ").slice(1);
@@ -113,7 +109,7 @@ const args = message.content.split (" ").slice(1);
         message.delete();
         message.channel.send(args.join(" "))
 }});
-bot.on('message', message => {
+client.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
 const args = message.content.split (" ").slice(1);
@@ -133,7 +129,7 @@ let member = message.mentions.users.first() || bot.users.get(args[0]) || message
         }
     })
     }});
-bot.on('message', message => {
+client.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
 const args = message.content.split (" ").slice(1);
@@ -149,7 +145,7 @@ const args = message.content.split (" ").slice(1);
         message.channel.send(statusembed);
     }
 });
-bot.on('message', message => {
+client.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
 const args = message.content.split (" ").slice(1);
@@ -161,7 +157,7 @@ if (message.content.includes("https://discord.gg/")) {
 
     }
     });
-bot.on('message', message => {
+client.on('message', message => {
     let arraymsg = message.content.split(" ");
 let cmd = arraymsg[0].toLowerCase()
 const args = message.content.split (" ").slice(1);
@@ -194,4 +190,4 @@ const args = message.content.split (" ").slice(1);
             });
 
 // THIS  MUST  BE  THIS  WAY
-bot.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
