@@ -7,6 +7,19 @@ client.on('guildMemberAdd', member => {
   member.send(`${member}, Obrigado por entrar em nosso discord, sua presença é muito importante a nós! Seja Bem-Vindo! :heart_eyes:\n\n:book: Conheça nossas regras no chat :scroll: 💭bate-papo na mensagem fixada e fique atento para não receber nenhuma surpresa.\n\n:pushpin: Convide seus amigos para se divertir juntos!\n\n:balloon: Ajude diariamente e consiga uma TAG maneira!\n\n:white_check_mark: #Paz #Respeito`);
   const randomColor = "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); });
  
+  let canal = member.guild.channels.find(`name`, "📥entrada");
+  if (!canal) return;  
+  var embed = new Discord.RichEmbed()
+  .setColor(randomColor)
+  .setDescription(`🎈 **|** ${member} **Seja bem-vindo(a) ao nosso servidor!\nConvite https://discord.gg/JcVa7C**`)
+  .setColor('#36393e')
+  canal.send({embed : embed})
+});
+
+client.on('guildMemberAdd', member => {
+  member.send(`${member}, Obrigado por entrar em nosso discord, sua presença é muito importante a nós! Seja Bem-Vindo! :heart_eyes:\n\n:book: Conheça nossas regras no chat :scroll: 💭bate-papo na mensagem fixada e fique atento para não receber nenhuma surpresa.\n\n:pushpin: Convide seus amigos para se divertir juntos!\n\n:balloon: Ajude diariamente e consiga uma TAG maneira!\n\n:white_check_mark: #Paz #Respeito`);
+  const randomColor = "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); });
+ 
   let canal = member.guild.channels.find(`name`, "📨recepção");
   if (!canal) return;  
   var embed = new Discord.RichEmbed()
